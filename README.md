@@ -1,19 +1,19 @@
-# glsl-transpose
-Transpose a matrix in GLSL.
+# glsl-inverse
+Invert a matrix in GLSL.
 
 # Example
 
 ```glsl
-#pragma glslify: transpose = require(glsl-transpose)
+#pragma glslify: inverse = require(glsl-inverse)
 
 void main() {
-  mat3 m = mat3(1, 2, 3,
-                4, 5, 6,
-                7, 8, 9);
+  mat3 m = mat3(1, 2, -3,
+                4, 0, 6,
+                7.1, 8, 9);
 
-  mat3 mt = transpose(m);
+  mat3 mi = inverse(m);
 
-  //now mt is the transpose of m
+  //now mi is the inverse of m
 }
 ```
 
@@ -22,7 +22,7 @@ void main() {
 Install with npm:
 
 ```
-npm install glsl-transpose
+npm install glsl-inverse
 ```
 
 Then use with [glslify](https://github.com/stackgl/glslify).
@@ -30,15 +30,15 @@ Then use with [glslify](https://github.com/stackgl/glslify).
 # API
 
 ```glsl
-#pragma glslify: transpose = require(glsl-transpose)
+#pragma glslify: inverse = require(glsl-inverse)
 ```
 
-### `mt = transpose(float|mat2|mat3|mat4 m)`
-Computes the transpose of a matrix
+### `mi = inverse(float|mat2|mat3|mat4 m)`
+Computes inverse of m
 
-* `m` is a matrix to transpose, either `float, mat2, mat3` or `mat4`
+* `m` is a matrix to invert, either `float, mat2, mat3` or `mat4`
 
-**Returns** The transpose of `m`
+**Returns** The inverse of `m`
 
 # License
 (c) 2014 Mikola Lysenko. MIT License
