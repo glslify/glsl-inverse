@@ -3,8 +3,8 @@ float inverse(float m) {
 }
 
 mat2 inverse(mat2 m) {
-  return mat2(m[0][0],-m[1][0],
-             -m[0][1], m[1][1]) / (m[0][0]*m[1][1] - m[0][1]*m[1][0]);
+  return mat2(m[1][1],-m[0][1],
+             -m[1][0], m[0][0]) / (m[0][0]*m[1][1] - m[0][1]*m[1][0]);
 }
 
 mat3 inverse(mat3 m) {
