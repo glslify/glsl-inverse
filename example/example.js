@@ -1,6 +1,6 @@
 var glslify       = require('glslify')
 var drawTriangle  = require('a-big-triangle')
-var invert        = require('gl-matrix-inverse')
+var invert        = require('gl-matrix-invert')
 
 var canvas = document.createElement('canvas')
 var gl = canvas.getContext('webgl')

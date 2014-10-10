@@ -20,7 +20,7 @@ mat3 inverse(mat3 m) {
 
   return mat3(b01, (-a22 * a01 + a02 * a21), (a12 * a01 - a02 * a11),
               b11, (a22 * a00 - a02 * a20), (-a12 * a00 + a02 * a10),
-              b21, (-a21 * a00 + a01 * a20), (a11 * a00 - a01 * a10)) * step(0.0, det) / det;
+              b21, (-a21 * a00 + a01 * a20), (a11 * a00 - a01 * a10)) / det;
 }
 
 mat4 inverse(mat4 m) {
@@ -61,7 +61,7 @@ mat4 inverse(mat4 m) {
       a11 * b07 - a10 * b09 - a12 * b06,
       a00 * b09 - a01 * b07 + a02 * b06,
       a31 * b01 - a30 * b03 - a32 * b00,
-      a20 * b03 - a21 * b01 + a22 * b00) * (step(0,det)/det);
+      a20 * b03 - a21 * b01 + a22 * b00) / det;
 }
 
 #pragma glslify: export(inverse)
